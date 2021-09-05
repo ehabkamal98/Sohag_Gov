@@ -2,24 +2,25 @@
 <section class="footer-area pt-50 pb-10">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-6 col-md-6 p-5 pt-0 pb-0">
                 <div class="single-footer-widget">
-                    <a href="{{route('home')}}">
+                    <a class="" href="{{route('home')}}">
                         <img src="{{asset('assets/img/webWhite.png')}}">
                     </a>
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-6">
-                <div class="single-footer-widget">
+            <div class="col-lg-6 col-md-6 p-5">
+                <div class="single-footer-widget text-center">
                     <h2>للاشتراك</h2>
                     <div class="widget-subscribe-content">
                         <p>قم بأدخال بريدك الالكتروني لمتابعتنا وليصلك كل ما هو جديد</p>
-                        <form class="newsletter-form" id="form_email">
-                            @csrf
-                            <input type="email" id="input_email" class="input-newsletter " placeholder=" ... ادخل بريدك الاليكتروني" name="EMAIL" required>
-                            <button type="submit" id="button_email">اشتراك</button>
-                        </form>
+                        <section id="newsletter" >
+                              <form action="{{route('add_email')}}" method="POST">
+                                  @csrf
+                                  <input type="email" class="text-center" name="email" placeholder="اكتب بريدك الالكتروني " oninvalid="this.setCustomValidity('برجاء كتابة بريدك الالكتروني')" oninput="setCustomValidity('')" required><input type="submit" value="اشتراك">
+                              </form>
+                        </section>
                     </div>
                 </div>
             </div>
@@ -28,14 +29,9 @@
 </section>
 <script src="{{asset('assets/js/jquery.min.js')}}"></script>
 <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-
 <script>
-
-    $(document).ready(function(){
-
-        // Emails
+   /* $(document).ready(function(){
         $("#form_email").submit(function(e) {
-
             var email = $("#input_email").val();
             var _token = $('input[name="_token"]').val();
             $.ajax({
@@ -51,13 +47,7 @@
                     console.log(data);
                 }
             });
-
-
         });
-
-
-    });
-
-
+    });*/
 </script>
 

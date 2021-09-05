@@ -3,7 +3,7 @@
         <div class="container">
             <div class="main-responsive-menu">
                 <div class="logo">
-                    <a href="{{route('home')}}" >
+                    <a class="navbar-brand p-2" style="width: 25%;" href="{{route('magazine_page')}}" >
                         <img src="{{asset('assets/img/logo.png')}}">
                     </a>
                 </div>
@@ -26,7 +26,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{route('magazine_page')}}" class="nav-link @if(Request::is('zahra/magazine')) active @endif">
-                                الاصدارات
+                                المجلة
                             </a>
                         </li>
                         @if($categories_nav->count()>4)
@@ -80,9 +80,7 @@
         <div class="container">
             <div class="dot-menu">
                 <div class="inner">
-                    <div class="circle circle-one"></div>
-                    <div class="circle circle-two"></div>
-                    <div class="circle circle-three"></div>
+                    <i class="fa fa-search"></i>
                 </div>
             </div>
 

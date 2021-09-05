@@ -35,9 +35,10 @@
                                 </div>
                             </div>
                             <div class="row m-3">
-                                <label class="form-label col-md-4 col-4" for="photo">الصورة <span class="fa fa-image"> *</span></label>
+                                <label class="form-label col-md-4 col-4" for="photo">الصورة <span class="fa fa-image text-danger"> *</span></label>
                                 <div class="col-md-8 col-8 ">
                                     <input type="file" class="form-control" id="photo" name="photo" @if($ad->photo=='default.jpg')required @endif />
+                                    <span class="text-danger">يجب ان يكون مقاس الصورة 25سم * 20سم</span>
                                 </div>
                             </div>
                             <div class="row m-3">
@@ -67,13 +68,6 @@
                             <div class="single-featured-reports">
                                 <div class="featured-reports-image text-center m-2">
                                     <img src="{{asset('assets/img/ads/'.$ad->photo)}}" width="400" height="510" alt="{{$ad->link}}">
-
-                                    <div class="featured-reports-content">
-                                        <h3>
-                                            {{$ad->content}}
-                                        </h3>
-                                        <p> {{$ad->title}}</p>
-                                    </div>
                                 </div>
                             </div>
                         </section>

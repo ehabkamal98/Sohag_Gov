@@ -7,6 +7,7 @@ Route::get('/category/{id}','PageController@category')->name('category_page');
 Route::get('/category/{category_id}/{post_id}','PageController@post')->name('post_page');
 Route::get('/zahra/magazine','PageController@magazine')->name('magazine_page');
 Route::get('/zahra/magazine/{date}', 'MagazineController@show')->name('magazine_view');
+Route::post('/email', 'EmailController@create')->name('add_email');
 
 Route::get('/search','PageController@search')->name('search');
 
@@ -44,7 +45,6 @@ Route::group(['middleware'=>['web','auth']],function () {
     Route::post('/dashboard/ads','AdsController@control')->name('control_ad');
 
     Route::get('/dashboard/email', 'EmailController@index')->name('email');
-    Route::post('/dashboard/email/add', 'EmailController@create')->name('add_email');
     Route::get('/dashboard/email/del/{id}', 'EmailController@destroy')->name('del_email');
 
 

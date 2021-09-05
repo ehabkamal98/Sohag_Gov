@@ -23,6 +23,47 @@ class CreateAdsTable extends Migration
             $table->boolean('active')->default(0);
             $table->timestamps();
         });
+
+        DB::table('ads')->insert(
+            array(
+                [
+                    'name' => 'مساحة اعلانية رقم 1 - الصفحة الرئيسية',
+                    'photo'=>'default.jpg',
+                ],
+                [
+                    'name' => 'مساحة اعلانية رقم 2 - الصفحة الرئيسية',
+                    'photo'=>'default.jpg',
+                ],
+                [
+                    'name' => 'مساحة اعلانية رقم 3 - الصفحة الرئيسية',
+                    'photo'=>'default.jpg',
+                ],
+                [
+                    'name' => 'مساحة اعلانية رقم 4 - الصفحة الرئيسية',
+                    'photo'=>'default.jpg',
+                ],
+                [
+                    'name' => 'مساحة اعلانية رقم 5 - الصفحة الرئيسية',
+                    'photo'=>'default.jpg',
+                ],
+                [
+                    'name' => 'مساحة اعلانية رقم 6 - الصفحة الرئيسية',
+                    'photo'=>'default.jpg',
+                ],
+                [
+                    'name' => 'مساحة اعلانية رقم 7 - الصفحات الداخلية',
+                    'photo'=>'default.jpg',
+                ],
+                [
+                    'name' => 'مساحة اعلانية رقم 8 - الصفحات الداخلية',
+                    'photo'=>'default.jpg',
+                ],
+                [
+                    'name' => 'مساحة اعلانية رقم 9 - الصفحات الداخلية',
+                    'photo'=>'default.jpg',
+                ],
+            )
+        );
     }
 
     /**

@@ -42,7 +42,7 @@
                             <div class="col-md-6 col-12" >
                                 <div class="form-group">
                                     <label  data-error="wrong" data-success="right" ><i class="fas fa-file prefix grey-text"></i>   عنوان المقال </label>
-                                    <input type="text" name="title" class="form-control" value="{{ $post->title}}" required >
+                                    <input type="text" name="title" class="form-control" value="{{old('title')?old('title'):$post->title}}" required >
                                 </div>
                             </div>
                             <div class="col-md-6 col-12" >
@@ -73,7 +73,7 @@
                         <div class=" col-md-12 col-12 m-1 mt-5">
                             <div class="form-group" >
                                 <div class="text-editor-content">
-                                    <textarea name="description" id="description" required> {{$post->content}}</textarea>
+                                    <textarea name="description" id="description" required> {{ old('description')?old('description'):$post->content }}  </textarea>
                                 </div>
                             </div>
                         </div>

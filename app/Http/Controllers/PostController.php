@@ -41,32 +41,41 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->description) {
-            $another_posts=Post::where('magazine_date',$request->magazine)->get();
-            $check=$another_posts->whereIn('category_id',$request->category);
-            if(!$check->count()) {
-                $post = new Post();
-                $post->title = $request->title;
-                $post->category_id = $request->category;
-                $post->content = $request->description;
-                $post->magazine_date = $request->magazine;
+        if ($request->category) {
+            if($request->magazine) {
+                if($request->description) {
+                    $another_posts = Post::where('magazine_date', $request->magazine)->get();
+                    $check = $another_posts->whereIn('category_id', $request->category);
+                    if (!$check->count()) {
+                        $post = new Post();
+                        $post->title = $request->title;
+                        $post->category_id = $request->category;
+                        $post->content = $request->description;
+                        $post->magazine_date = $request->magazine;
 
-                $post->save();
+                        $post->save();
 
-                if ($photo = $request->photo) {
-                    $name = $post->id . '.' . $photo->extension();
-                    $photo->move('assets/img/posts/', $name);
-                    $post->photo = $name;
-                    $post->save();
+                        if ($photo = $request->photo) {
+                            $name = $post->id . '.' . $photo->extension();
+                            $photo->move('assets/img/posts/', $name);
+                            $post->photo = $name;
+                            $post->save();
+                        }
+
+                        return redirect(route('post'))->with('success', 'تم اضافة المقال بنجاح');
+                    } else {
+                        return back()->with('failed', 'مقال هذا القسم مضاف بالفعل في هذا العدد')->withInput();
+                    }
                 }
-
-                return redirect(route('post'))->with('success', 'تم اضافة المقال بنجاح');
+                else{
+                    return back()->with('failed', 'برجاء التأكد من محتوي المقال')->withInput();
+                }
             }
             else{
-                return back()->with('failed', 'مقال هذا القسم مضاف بالفعل في هذا العدد')->withInput();
+                return back()->with('failed', 'برجاء اختيار الاصدار')->withInput();
             }
         }
-        return back()->with('failed', 'برجاء التأكد من محتوي المقال')->withInput();
+        return back()->with('failed', 'برجاء اختيار القسم')->withInput();
     }
 
     /**
@@ -103,31 +112,40 @@ class PostController extends Controller
      */
     public function update(Request $request,$id)
     {
-        if ($request->description) {
-            $another_posts=Post::where('magazine_date',$request->magazine)->get();
-            $check=$another_posts->whereIn('category_id',$request->category);
-            if(!$check->count()||$check->first()->id==$id) {
-                $post = Post::find($id);
-                $post->title = $request->title;
-                $post->category_id = $request->category;
-                $post->content = $request->description;
-                $post->magazine_date = $request->magazine;
-                $post->save();
+        if ($request->category) {
+            if($request->magazine) {
+                if($request->description) {
+                    $another_posts = Post::where('magazine_date', $request->magazine)->get();
+                    $check = $another_posts->whereIn('category_id', $request->category);
+                    if (!$check->count() || $check->first()->id == $id) {
+                        $post = Post::find($id);
+                        $post->title = $request->title;
+                        $post->category_id = $request->category;
+                        $post->content = $request->description;
+                        $post->magazine_date = $request->magazine;
+                        $post->save();
 
-                if ($image = $request->photo) {
-                    $name = $id . '.' . $image->extension();
-                    $image->move('assets/img/posts/', $name);
-                    $post->photo = $name;
-                    $post->save();
+                        if ($image = $request->photo) {
+                            $name = $id . '.' . $image->extension();
+                            $image->move('assets/img/posts/', $name);
+                            $post->photo = $name;
+                            $post->save();
+                        }
+
+                        return redirect(route('post'))->with('success', 'تم تعديل المقال بنجاح');
+                    } else {
+                        return back()->with('failed', 'مقال هذا القسم مضاف بالفعل في هذا العدد')->withInput();
+                    }
                 }
-
-                return redirect(route('post'))->with('success', 'تم تعديل المقال بنجاح');
+                else{
+                    return back()->with('failed', 'برجاء التأكد من محتوي المقال')->withInput();
+                }
             }
             else{
-                return back()->with('failed', 'مقال هذا القسم مضاف بالفعل في هذا العدد')->withInput();
+                return back()->with('failed', 'برجاء التأكد من الاصدار')->withInput();
             }
         }
-        return back()->with('failed', 'برجاء التأكد من محتوي المقال')->withInput();
+        return back()->with('failed', 'برجاء التأكد من القسم')->withInput();
 
     }
 

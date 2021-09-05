@@ -36,7 +36,7 @@
                 <tbody>
                 @foreach($posts as $post)
                     <tr id="data">
-                        <td class="align-middle"><img src="{{asset('assets/img/posts/'.$post->photo)}}" class="rounded mx-auto d-block" style="width:350px;height: 200px;"></td>
+                        <td class="align-middle"><img src="{{asset('assets/img/posts/'.$post->photo)}}" class="rounded mx-auto d-block" style="max-width:350px;max-height: 200px;"></td>
                         <td class="align-middle">{{$post->title}}</td>
                         <td class="align-middle">{{$post->category->name}}</td>
                         <td class="align-middle">{{$post->magazine_date}}</td>

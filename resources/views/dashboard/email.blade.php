@@ -9,7 +9,7 @@
     </div>
     <div class="row m-2 p-5">
         @if(session('message'))
-            <div class="alert alert-default-success alert-dismissible fade show text-center font-weight-bold " role="alert" style="width: 100%">
+            <div class="alert alert-success alert-dismissible fade show text-center font-weight-bold " role="alert" style="width: 100%">
                 {{session('message')}}
             </div>
         @endif
@@ -45,9 +45,6 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <h5 class="modal-title w-100 font-weight-bold"> حذف بريد الكتروني </h5>
-                    <button type="button" style="float: left" class="close" data-dismiss="modal" aria-label="Close">
-                        <span  aria-hidden="true">&times;</span>
-                    </button>
                 </div>
                 <div class="modal-body text-center">
                     هل انت متأكد من حذف البريد الالكتروني ؟

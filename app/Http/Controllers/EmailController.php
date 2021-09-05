@@ -27,9 +27,9 @@ class EmailController extends Controller
     public function create(Request $request)
     {
         $email=new Email();
-        $email->email=$request->get('email');
+        $email->email=$request->email;
         $email->save();
-        return response()->json($email);
+        return back();
     }
 
     public function destroy($id)

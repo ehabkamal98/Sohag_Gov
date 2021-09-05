@@ -4,10 +4,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta id="token" name="token" content="{ { csrf_token() } }">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.rtl.min.css')}}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{asset('assets/css/fontawesome-free/css/all.min.css')}}">
     <!-- Animate CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/animate.min.css')}}">
     <!-- Meanmenu CSS -->

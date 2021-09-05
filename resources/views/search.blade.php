@@ -44,7 +44,7 @@
                                             <h3>
                                                 <a href="#">{{$post->title}}</a>
                                             </h3>
-                                            <p>{{$post->created_at}}</p>
+                                            <p>{{$post->updated_at}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -94,11 +94,11 @@
                             <div class="featured-reports-image">
                                 @if(isset($ads[6]))
                                 <a href="{{$ads[6]->link}}">
-                                    <img src="{{asset('assets/img/ads/'.$ads[6]->photo)}}" width="510" height="400" alt="{{$ads[6]->title}}">
+                                    <img src="{{asset('assets/img/ads/'.$ads[6]->photo)}}" class="rounded mx-auto d-block" style="max-width: 330px;max-height: 264px" alt="{{$ads[6]->title}}">
                                 </a>
                                 @else
                                     <a>
-                                        <img src="{{asset('assets/img/ads/default.jpg')}}" width="510" height="400">
+                                        <img src="{{asset('assets/img/ads/default.jpg')}}" style="max-width: 377px;max-height: 302px">
                                     </a>
                                 @endif
                             </div>
@@ -109,11 +109,11 @@
                             <div class="featured-reports-image">
                                 @if(isset($ads[7]))
                                 <a href="{{$ads[7]->link}}">
-                                    <img src="{{asset('assets/img/ads/'.$ads[7]->photo)}}" width="510" height="400" alt="{{$ads[7]->title}}">
+                                    <img src="{{asset('assets/img/ads/'.$ads[7]->photo)}}" class="rounded mx-auto d-block" style="max-width: 330px;max-height: 264px" alt="{{$ads[7]->title}}">
                                 </a>
                                 @else
                                     <a>
-                                        <img src="{{asset('assets/img/ads/default.jpg')}}" width="510" height="400">
+                                        <img src="{{asset('assets/img/ads/default.jpg')}}" style="max-width: 377px;max-height: 302px">
                                     </a>
                                 @endif
                             </div>
@@ -121,7 +121,7 @@
                     </section>
 
                     <section class="widget widget_latest_news_thumb">
-                        <h3 class="widget-title">اخر المقالات</h3>
+                        <h3 class="widget-title">اخر المقالات <i class="fa fa-newspaper"></i></h3>
                         @if(count($all_post)>0)
                         @foreach($all_post as $post)
                         <article class="item ">
@@ -131,7 +131,7 @@
                             <span class="text_color">{{$post->category->name}}</span>
                             <div class="info">
                                 <h4 class="title usmall"><a href="{{route('post_page',['category_id'=>$post->category_id,'post_id'=>$post->id])}}">{{$post->title}}</a></h4>
-                                <span>{{$post->created_at}}</span>
+                                <span>{{$post->updated_at}}</span>
                             </div>
                         </article>
                         @endforeach
@@ -143,11 +143,11 @@
                             <div class="featured-reports-image">
                                 @if(isset($ads[8]))
                                 <a href="{{$ads[8]->link}}">
-                                    <img src="{{asset('assets/img/ads/'.$ads[8]->photo)}}" width="510" height="400" alt="{{$ads[8]->title}}">
+                                    <img src="{{asset('assets/img/ads/'.$ads[8]->photo)}}" class="rounded mx-auto d-block" style="max-width: 330px;max-height: 264px" alt="{{$ads[8]->title}}">
                                 </a>
                                 @else
                                     <a>
-                                        <img src="{{asset('assets/img/ads/default.jpg')}}" width="510" height="400">
+                                        <img src="{{asset('assets/img/ads/default.jpg')}}" style="max-width: 377px;max-height: 302px">
                                     </a>
                                 @endif
                             </div>

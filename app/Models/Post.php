@@ -25,4 +25,7 @@ class Post extends Model
     public function getCreatedAtAttribute($value){
         return Carbon::createFromFormat('Y-m-d H:i:s', $value)->diffForHumans();
     }
+    public function getUpdatedAtAttribute($value){
+        return Carbon::createFromFormat('Y-m-d H:i:s', $value)->diffForHumans();
+    }
 }

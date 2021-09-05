@@ -10,7 +10,7 @@
 <div class="page-title-area">
     <div class="container">
         <div class="page-title-content">
-            <h2>اصدارت المجلة</h2>
+            <h2 class="fa fa-book-open "> اصدارت المجلة </h2>
             <ul>
                 <li> <a href="{{route('home')}}">الرئيسية</a></li>
                 <li>اصدارت المجلة</li>
@@ -26,12 +26,17 @@
         <div class="row">
             @if(count($magazines)>0)
             @foreach($magazines as $magazine)
-                <div class="col-md-4 col-12" >
+                <div class="col-md-4 col-12 p-5" >
                     <a href="{{route('magazine_view',$magazine->date)}}" target="_blank">
-                        <div class="card mb-3">
-                            <h3 class="card-header text-center">{{$magazine->title}}</h3>
-                            <h5 class="card-body text-center ">تاريخ الاصدار : {{$magazine->date_arabic}}</h5>
-                            <img class="rounded mx-auto d-block" style="height: 150px;width: 200px;" src="{{asset('assets/img/web.png')}}" />
+                        <div class="card border border-info mb-3 bg-light">
+                            <div class="ribbon ribbon-top-right m-2"><span>{{$magazine->title}} <i class="fa fa-check-circle"></i></span></div>
+                            <h5 class="card-body text-center mt-5" style="margin-bottom: -50px"> {{$magazine->date_arabic}}</h5>
+                            <img class="rounded mx-auto d-block" style="height: 250px;width: 300px;" src="{{asset('assets/img/web.png')}}" />
+                            <div class="card-footer text-center">
+                                <a href="{{route('show_magazine',$magazine->date)}}" target="_blank" class="btn btn-primary float-right">
+                                    <i class="fa fa-search"></i> عرض
+                                </a>
+                            </div>
                         </div>
                     </a>
                 </div>
