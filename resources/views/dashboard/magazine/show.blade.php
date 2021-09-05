@@ -42,12 +42,12 @@
         @foreach($posts as $key=>$post)
         <div style="direction: rtl;border: solid 2px #EF5050;background-color: #F5F5F5" >
             <div class="row">
-                <div class="col-md-6 col-6 new-ribbon"style="margin-top: -10px;margin-right: -20px">
+                <div class="col-md-3 col-3 new-ribbon text-center" style="margin-top: -10px;margin-right: -20px;width: 35%">
                     <span style="font-size: 30px;margin-right: 0px;margin-left: 20px;font-weight: bold">
                           {{$post->category->name}}
                     </span>
                 </div>
-                <div class="col-md-6 col-6">
+                <div class="col-md-8 col-8" style="width: 65%">
                     <h1 class="custom-ribbon text-center">{{$post->title}}</h1>
                  </div>
             </div>
@@ -59,9 +59,11 @@
             </div>
         </div>
         @endforeach
+        @if(count($posts)%2==0)
         <div class='cover' style="direction: rtl;border: solid 2px #EF5050;background-color: #E0E0E0">
             <img src="{{asset('assets/img/web.png')}}" width="100%" height="100%" />
         </div>
+            @endif
     </div> <!-- book -->
 </div>
 

@@ -6341,12 +6341,13 @@ Go Top CSS
 
 
 .custom-ribbon{
+    top: -5%;
+    left: -1%;
     position:relative;
-    padding: 0 0.5em;
+    padding: 0 0em;
     font-size:2.500em;
     font-weight: bold;
-    right: 100px;
-    margin: 0 0 0 -0.625em;
+    margin: 0 0 0 0 ;
     line-height: 1.875em;
     color: #e6e2c8;
     border-radius: 0 0.156em 0.156em 0;

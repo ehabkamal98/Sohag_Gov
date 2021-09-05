@@ -26,7 +26,7 @@
                         </div>
                             </div>
                         @else
-                           <img src="{{asset('assets/img/web.png')}}" style="max-height: 600px;max-width: 730px;">
+                           <img class="rounded mx-auto d-block"  src="{{asset('assets/img/web.png')}}" style="max-height: 600px;max-width: 730px;">
                         @endif
                     </div>
                 </div>
