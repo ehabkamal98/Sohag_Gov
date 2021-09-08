@@ -33,7 +33,7 @@
                             <h5 class="card-body text-center mt-5" style="margin-bottom: -50px"> {{$magazine->date_arabic}}</h5>
                             <img class="rounded mx-auto d-block" style="height: 250px;width: 300px;" src="{{asset('assets/img/web.png')}}" />
                             <div class="card-footer text-center">
-                                <a href="{{route('show_magazine',$magazine->date)}}" target="_blank" class="btn btn-primary float-right">
+                                <a href="{{route('magazine_view',$magazine->date)}}" target="_blank" class="btn btn-primary float-right">
                                     <i class="fa fa-search"></i> عرض
                                 </a>
                             </div>

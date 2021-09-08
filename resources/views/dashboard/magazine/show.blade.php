@@ -37,18 +37,26 @@
     <div id='book' >
         <div class='cover' style="direction: rtl;border: solid 2px #EF5050;background-color: #E0E0E0">
             <img src="{{asset('assets/img/web.png')}}" style="margin-top: -150px;margin-bottom: -100px" width="100%" height="100%" />
-            <h1 class="custom-ribbon text-center">{{$magazine->title}}  {{$date}}</h1>
+            <h1 class="custom-ribbon text-center mt-5">{{$magazine->title}}  {{$date}}</h1>
+            <div class="text-center row p-2 mt-5">
+                <div class="col-md-6 col-6">
+                    <h2>رئيس مجلس الاداره </h2>  <h2>  د. احمد سامي القاضي</h2> <h2>  (نائب المحافظ) </h2>
+                </div>
+                <div class="col-md-6 col-6">
+                    <h2>المشرف العام </h2>  <h2>  د. مرزوق العادلي</h2>
+                </div>
+            </div>
         </div>
         @foreach($posts as $key=>$post)
         <div style="direction: rtl;border: solid 2px #EF5050;background-color: #F5F5F5" >
             <div class="row">
-                <div class="col-md-3 col-3 new-ribbon text-center" style="margin-top: -10px;margin-right: -20px;width: 35%">
-                    <span style="font-size: 30px;margin-right: 0px;margin-left: 20px;font-weight: bold">
+                <div class="col-md-3 col-3 new-ribbon text-center" style="margin-top: -10px;margin-right: -20px;width: 30%">
+                    <span style="font-size: 30px;margin-right: -20px;margin-left: 0px;font-weight: bold">
                           {{$post->category->name}}
                     </span>
                 </div>
-                <div class="col-md-8 col-8" style="width: 65%">
-                    <h1 class="custom-ribbon text-center">{{$post->title}}</h1>
+                <div class="col-md-8 col-8" style="width: 70%">
+                    <h1 class="custom-ribbon text-center text-light">{{$post->title}}</h1>
                  </div>
             </div>
             <img class="rounded mx-auto d-block border border-5 border-dark mt-3" style="width: 350px;height: 300px" src="{{asset('assets/img/posts/'.$post->photo)}}">

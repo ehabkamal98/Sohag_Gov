@@ -26,7 +26,7 @@
                 <tbody>
                 @foreach($emails as $email)
                     <tr id="data">
-                        <td class="align-middle">{{$email->id}}</td>
+                        <td class="align-middle">{{$loop->iteration}}</td>
                         <td class="align-middle">{{$email->email}}</td>
                         <td class="align-middle">{{$email->created_at->format('Y/m/d')}}</td>
                         <td>

@@ -27,27 +27,4 @@
         </div>
     </div>
 </section>
-<script src="{{asset('assets/js/jquery.min.js')}}"></script>
-<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-<script>
-   /* $(document).ready(function(){
-        $("#form_email").submit(function(e) {
-            var email = $("#input_email").val();
-            var _token = $('input[name="_token"]').val();
-            $.ajax({
-                type: "POST",
-                url: "{{ route('add_email') }}",
-                data:{email:email, _token:_token},
-                success: function(data)
-                {
-                    $("#button_email").text("تم ارسال بريدك الالكتروني بنجاح");
-                    $("#input_email").val("تم ارسال بريدك الالكتروني بنجاح");
-                },
-                error:function (data) {
-                    console.log(data);
-                }
-            });
-        });
-    });*/
-</script>
 

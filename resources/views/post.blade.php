@@ -50,11 +50,11 @@
                             <div class="featured-reports-image">
                                 @if(isset($ads[6]))
                                 <a href="{{$ads[6]->link}}">
-                                    <img src="{{asset('assets/img/ads/'.$ads[6]->photo)}}" class="rounded mx-auto d-block" style="max-width: 330px;max-height: 264px" alt="{{$ads[6]->title}}">
+                                    <img src="{{asset('assets/img/ads/'.$ads[6]->photo)}}" class="rounded mx-auto d-block" style="width: 330px;height: 264px" alt="{{$ads[6]->title}}">
                                 </a>
                                 @else
                                     <a>
-                                        <img src="{{asset('assets/img/ads/default.jpg')}}" style="max-width: 377px;max-height: 302px">
+                                        <img src="{{asset('assets/img/ads/default.jpg')}}" style="width: 377px;height: 302px">
                                     </a>
                                 @endif
                             </div>
@@ -65,11 +65,11 @@
                             <div class="featured-reports-image">
                                 @if(isset($ads[7]))
                                 <a href="{{$ads[7]->link}}">
-                                    <img src="{{asset('assets/img/ads/'.$ads[7]->photo)}}" class="rounded mx-auto d-block" style="max-width: 330px;max-height: 264px" alt="{{$ads[7]->title}}">
+                                    <img src="{{asset('assets/img/ads/'.$ads[7]->photo)}}" class="rounded mx-auto d-block" style="width: 330px;height: 264px" alt="{{$ads[7]->title}}">
                                 </a>
                                 @else
                                     <a>
-                                        <img src="{{asset('assets/img/ads/default.jpg')}}" style="max-width: 377px;max-height: 302px">
+                                        <img src="{{asset('assets/img/ads/default.jpg')}}" style="width: 377px;height: 302px">
                                     </a>
                                 @endif
                             </div>
@@ -99,11 +99,11 @@
                             <div class="featured-reports-image">
                                 @if(isset($ads[8]))
                                 <a href="{{$ads[8]->link}}">
-                                    <img src="{{asset('assets/img/ads/'.$ads[8]->photo)}}" class="rounded mx-auto d-block" style="max-width: 330px;max-height: 264px" alt="{{$ads[8]->title}}">
+                                    <img src="{{asset('assets/img/ads/'.$ads[8]->photo)}}" class="rounded mx-auto d-block" style="width: 330px;height: 264px" alt="{{$ads[8]->title}}">
                                 </a>
                                 @else
                                     <a>
-                                        <img src="{{asset('assets/img/ads/default.jpg')}}" style="max-width: 377px;max-height: 302px">
+                                        <img src="{{asset('assets/img/ads/default.jpg')}}" style="width: 377px;height: 302px">
                                     </a>
                                 @endif
                             </div>

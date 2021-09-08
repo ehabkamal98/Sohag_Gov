@@ -2,10 +2,21 @@
     <div class="main-responsive-nav">
         <div class="container">
             <div class="main-responsive-menu">
-                <div class="logo">
-                    <a class="navbar-brand p-2" style="width: 25%;" href="{{route('magazine_page')}}" >
-                        <img src="{{asset('assets/img/logo.png')}}">
-                    </a>
+                <div class="logo row">
+                    <div class="col-6">
+                        <a class="navbar-brand p-2" style="width: 25%;margin-right: -15%" href="{{route('magazine_page')}}" >
+                            <img src="{{asset('assets/img/logo.png')}}">
+                        </a>
+                    </div>
+                    <div class="navbar-text text-center col-6 row" style="width:70%;margin-right: -25%;vertical-align: middle;">
+                        <div class="col-md-6 col-6 p-0">
+                            <span>رئيس مجلس الاداره </span> <br>  <span>  د. احمد سامي القاضي</span> <br> <span>  (نائب المحافظ) </span>
+                        </div>
+                        <div class="col-md-6 col-6 p-0">
+                            <span>المشرف العام </span> <br>  <span>  د. مرزوق العادلي</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -14,9 +25,17 @@
     <div class="main-navbar">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand p-2" style="width: 25%;" href="{{route('magazine_page')}}">
+                <a class="navbar-brand p-2" style="width: 35%;margin-right: -15%" href="{{route('magazine_page')}}">
                     <img src="{{asset('assets/img/logo.png')}}">
                 </a>
+                <div class="navbar-text text-center row" style="width:50%;margin-right: -5%;vertical-align: middle;">
+                    <div class="col-md-6 col-6 p-0">
+                        <span>رئيس مجلس الاداره </span> <br>  <span>  د. احمد سامي القاضي</span> <br> <span>  (نائب المحافظ) </span>
+                    </div>
+                    <div class="col-md-6 col-6 p-0">
+                        <span>المشرف العام </span> <br>  <span>  د. مرزوق العادلي</span>
+                    </div>
+                </div>
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav mt-2">
                         <li class="nav-item">
@@ -29,8 +48,8 @@
                                 المجلة
                             </a>
                         </li>
-                        @if($categories_nav->count()>4)
-                            @for($i=0;$i<4;$i++)
+                        @if($categories_nav->count()>3)
+                            @for($i=0;$i<3;$i++)
                                 <li class="nav-item">
                                     <a href="{{route('category_page',$categories_nav[$i]->id)}}" class="nav-link @if(Request::is('category/'.$categories_nav[$i]->id)) active @endif">
                                         {{$categories_nav[$i]->name}}
